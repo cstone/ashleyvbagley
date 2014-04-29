@@ -8,17 +8,15 @@
       %span.icon-bar
   .collapse.navbar-collapse
     %ul.nav.navbar-nav
-      %li
-        %a{href: "#"} About Me
-      %li
-        %a{href: "#"} Photos
-      %li
-        %a{href: "#"} Videos
-      %li
-        %a{href: "#"} Events
-      %li
-        %a{href: "#"} Radio Show
-      %li
-        %a{href: "#"} Blog
-      %li
-        %a{href: "#"} Contact Me
+      %li{class: cpa(page_path('about-me'))}
+        = link_to 'About Me', page_path('about-me')
+      %li{class: cpa(page_path('radio-show'))}
+        = link_to 'Radio Show', page_path('radio-show')
+      %li{class: cpa(photos_path)}
+        = link_to 'Photos', photos_path
+      %li{class: cpa(videos_path)}
+        = link_to 'Videos', videos_path
+      %li{class: cpa(blog_path)}
+        = link_to 'Blog', blog_path
+      %li{class: cpa(page_path('contact-me'))}
+        = link_to 'Contact Me', page_path('contact-me')
