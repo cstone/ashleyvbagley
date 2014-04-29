@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Cinzel+Decorative);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+$gray: #565052;
+$light-gray: #EEEEEE;
+$white: #FFFFFF;
+$main: #CF4C4F;
+$main-dark: #9C0012;
+$main-light: #FF7777;
+
+
+body {
+  background-color: $gray;
+  font-family: 'Open Sans', 'sans-serif';
+  color: $main;
+}
+
+.container {
+  background-color: $white;
+}
+
+h3 > i {
+  color: $main;
+}
+
+a {
+  color: $main;
+  text-decoration: none;
+  &:hover {
+    color: $main-dark;
+  }
+}
+
+
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: $main;
+  color: $white;
+}
+
+.page-header > h1 {
+  font-family: 'Lobster Two', 'cursive';
+}
+
+
+.navbar-brand {
+  font-family: 'Cinzel Decorative', 'cursive';
+  font-size: 36px;
+}
+
+.navbar-default {
+  background-color: $main;
+  border-color: none;
+}
+
+.navbar-fixed-top {
+  border: none;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: $white;
+  background-color: transparent;
+}
+
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: $white;
+  background-color: $main-dark;
+}
+
+
+.navbar-default .navbar-brand {
+  color: $white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: $white;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: $white;
+  background-color: $main-dark;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: $white;
+  background-color: $main-dark;
+}
+
+
+.navbar-collapse {
+  max-height: 340px;
+  overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: none;
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1) inset;
+}
+
+
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: $main-light;
+  color: $white;
+}
+.navbar-default .navbar-toggle {
+  border-color: $main-light;
+  color: $white;
+}
+
+
+
+.text-right {
+  text-align:right;
+}
+
+
+
+.panel-default > .panel-heading {
+  color: $white;
+  background-color: $main;
+  border-color: #DDD;
+}
+
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 5px 0px;
+  margin-bottom: -1px;
+  background-color: $white;
+  border: none;
+}
+
+
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 15px 15px 0;
+}
+#footer > .container p {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 10px 0 20px;
+  border-bottom: 1px solid $light-gray;
+}
+
+.fancy-slider {
+  font-family: 'Lobster Two', 'cursive';
+  font-size: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .carousel-caption {
+    top: 8%;
+  }
+
+}
+
+
