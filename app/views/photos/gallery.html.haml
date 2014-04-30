@@ -1,0 +1,9 @@
+= paginate @photos
+- @photos.each do |photo|
+  %h4= photo.title
+  %p= image_tag photo.photo_image.url, class: 'img-responsive'
+  %p
+    = time_ago_in_words photo.created_at
+    ago
+  %p= photo.description.html_safe
+= paginate @photos
