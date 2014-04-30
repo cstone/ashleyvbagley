@@ -1,4 +1,6 @@
 Ashleyvbagley::Application.routes.draw do
+  root :to => 'home#index'
+
   resources :articles
   resources :videos
   resources :photos
