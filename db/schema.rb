@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140429022319) do
+ActiveRecord::Schema.define(:version => 20140429235254) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "article_image"
+    t.boolean  "allow_comments"
+    t.boolean  "active"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "dynamic_contents", :force => true do |t|
     t.string   "title"
@@ -28,6 +38,24 @@ ActiveRecord::Schema.define(:version => 20140429022319) do
     t.string   "page_image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "photo_image"
+    t.boolean  "allow_comments"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "source"
+    t.boolean  "allow_comments"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end
