@@ -1,25 +1,14 @@
-%h1 Listing photos
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Photo image
-    %th Allow comments
-    %th
-    %th
-    %th
-
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li.active Photos
+%h3 Photos
+%table.table.table-bordered{width: "100%"}
   - @photos.each do |photo|
-    %tr
-      %td= photo.title
-      %td= photo.description
-      %td= photo.photo_image
-      %td= photo.allow_comments
-      %td= link_to 'Show', photo
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Photo', new_photo_path
+    - if photo.photo_image.url(:thumb)
+      %tr
+        %td{rowspan: "2", valign: "top", width: "20%"}= link_to(image_tag(photo.photo_image.url(:thumb), class: 'thumbnail'), photo)
+        %td{width: "80%"}= link_to photo.title, photo
+      %tr
+        %td{valign: "top"}= photo.description.truncate(200).html_safe
+    - else
+= paginate @photos
