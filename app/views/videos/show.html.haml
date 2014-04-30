@@ -1,18 +1,14 @@
-%p#notice= notice
-
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li= link_to 'Videos', videos_path
+  %li.active= @video.title
+%h3= @video.title
 %p
-  %b Title:
-  = @video.title
+  %iframe{allowfullscreen: "", frameborder: "0", height: "360", src: "//www.youtube.com/embed/#{@video.source}?rel=0", width: "640"}
 %p
-  %b Description:
-  = @video.description
+  %small
+    Published #{time_ago_in_words(@video.created_at)} ago
+%p= @video.description.html_safe
 %p
-  %b Source:
-  = @video.source
-%p
-  %b Allow comments:
-  = @video.allow_comments
-
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
+- if @video.allow_comments
+  = render 'layouts/structure/disqus-thread'
