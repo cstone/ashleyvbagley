@@ -1,27 +1,17 @@
-%h1 Listing articles
-
-%table
-  %tr
-    %th Title
-    %th Body
-    %th Article image
-    %th Allow comments
-    %th Active
-    %th
-    %th
-    %th
-
-  - @articles.each do |article|
-    %tr
-      %td= article.title
-      %td= article.body
-      %td= article.article_image
-      %td= article.allow_comments
-      %td= article.active
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Article', new_article_path
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li.active Blog
+%h3 Ashley's Blog
+- @articles.each do |article|
+  %h4= link_to_unless_current article.title, article
+  %p
+    - if article.article_image.url
+      = link_to(image_tag(article.article_image.url(:thumb), class: 'img-float-right img-responsive'), article)
+    = article.body.truncate(225).html_safe
+  %p
+    %small
+      = time_ago_in_words(article.created_at)
+      ago
+  %br/
+  %hr/
+= paginate @articles
