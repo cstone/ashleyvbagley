@@ -1,18 +1,7 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @page.title
-%p
-  %b Permalink:
-  = @page.permalink
-%p
-  %b Content:
-  = @page.content
-%p
-  %b Page image:
-  = @page.page_image
-
-= link_to 'Edit', edit_page_path(@page)
-\|
-= link_to 'Back', pages_path
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li.active= @page.name
+%h3= @page.name
+- if @page.page_image.url
+  = image_tag @page.page_image.url, class: 'img-float-right img-responsive'
+= @page.content.html_safe
