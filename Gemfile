@@ -40,6 +40,7 @@ gem 'activeadmin'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'contact_us', '~> 0.5.0'
+gem 'just-datetime-picker'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
