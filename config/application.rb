@@ -69,5 +69,7 @@ module Ashleyvbagley
 
     config.app_generators.scaffold_controller = :scaffold_controller
 
+    config.assets.precompile += ['http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css']
+
   end
 end
