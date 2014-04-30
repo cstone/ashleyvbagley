@@ -8,6 +8,7 @@ Ashleyvbagley::Application.routes.draw do
   resources :videos
   resources :photos
   resources :pages
+  resources :events
   get 'blog', to: 'articles#index', as: :blog
   get ':id', to: 'pages#show', as: :page
 
