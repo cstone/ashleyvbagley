@@ -1,18 +1,15 @@
-%p#notice= notice
-
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li= link_to 'Photos', photos_path
+  %li.active= @photo.title
+%h4= @photo.title
 %p
-  %b Title:
-  = @photo.title
-%p
-  %b Description:
-  = @photo.description
-%p
-  %b Photo image:
-  = @photo.photo_image
-%p
-  %b Allow comments:
-  = @photo.allow_comments
-
-= link_to 'Edit', edit_photo_path(@photo)
-\|
-= link_to 'Back', photos_path
+  %small
+    = time_ago_in_words(@photo.created_at)
+    ago
+%p= image_tag @photo.photo_image, class: 'img-responsive'
+%br/
+%p= @photo.description.html_safe
+%br/
+- if @photo.allow_comments
+  = render 'layouts/structure/disqus-thread'
