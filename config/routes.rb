@@ -1,6 +1,10 @@
 Ashleyvbagley::Application.routes.draw do
+  resources :articles
+  resources :videos
+  resources :photos
   resources :pages
-
+  get 'blog', to: 'articles#index', as: :blog
+  get ':id', to: 'pages#show', as: :page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
