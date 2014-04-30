@@ -1,5 +1,8 @@
 Ashleyvbagley::Application.routes.draw do
+
   root :to => 'home#index'
+
+  get '/gallery(/:page)', to: 'photos#gallery', as: :gallery
 
   resources :articles
   resources :videos
@@ -7,6 +10,8 @@ Ashleyvbagley::Application.routes.draw do
   resources :pages
   get 'blog', to: 'articles#index', as: :blog
   get ':id', to: 'pages#show', as: :page
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
