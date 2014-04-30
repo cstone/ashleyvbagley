@@ -1,21 +1,14 @@
-%p#notice= notice
-
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li= link_to 'Articles', articles_path
+  %li.active= @article.title
+%h3= @article.title
 %p
-  %b Title:
-  = @article.title
+  %i
+    Posted #{time_ago_in_words(@article.created_at)} ago
 %p
-  %b Body:
-  = @article.body
-%p
-  %b Article image:
-  = @article.article_image
-%p
-  %b Allow comments:
-  = @article.allow_comments
-%p
-  %b Active:
-  = @article.active
-
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+  - if @article.article_image.url
+    = image_tag @article.article_image.url, class: 'img-float-right img-responsive'
+  = @article.body.html_safe
+- if @article.allow_comments
+  = render 'layouts/structure/disqus-thread'
