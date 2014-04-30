@@ -3,20 +3,18 @@
     %h3.panel-title Navigation
   .panel-body
     %ul.nav.nav-pills.nav-stacked
-      %li
-        %a{href: "#"} About Me
-      %li
-        %a{href: "#"} Photos
-      %li
-        %a{href: "#"} Videos
-      %li
-        %a{href: "#"} Events
-      %li
-        %a{href: "#"} Radio Show
-      %li
-        %a{href: "#"} Blog
-      %li
-        %a{href: "#"} Contact Me
+      %li{class: cpa(page_path('about-me'))}
+        = link_to 'About Me', page_path('about-me')
+      %li{class: cpa(page_path('radio-show'))}
+        = link_to 'Radio Show', page_path('radio-show')
+      %li{class: cpa(photos_path)}
+        = link_to 'Photos', photos_path
+      %li{class: cpa(videos_path)}
+        = link_to 'Videos', videos_path
+      %li{class: cpa(blog_path)}
+        = link_to 'Blog', blog_path
+      %li{class: cpa(page_path('contact-me'))}
+        = link_to 'Contact Me', page_path('contact-me')
 %a.twitter-timeline{"data-widget-id" => "460794434691403777", href: "https://twitter.com/AshleysFaith"} Tweets by @AshleysFaith
 :javascript
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
