@@ -2,7 +2,7 @@
   %li= link_to 'Home', root_path
   %li.active Photos
 %h3 Photos
-%table.table.table-bordered{width: "100%"}
+%table.table
   - @photos.each do |photo|
     - if photo.photo_image.url(:thumb)
       %tr
