@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
   mount_uploader :page_image, PageImageUploader
 
   validates_uniqueness_of :permalink
-  validates_presence_of :name, :permalink, :content
+  validates_presence_of :title, :permalink, :content
 
   def to_param
     permalink
