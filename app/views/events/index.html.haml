@@ -1,35 +1,15 @@
-%h1 Listing events
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Venue
-    %th Address
-    %th City
-    %th State
-    %th Zip
-    %th Url
-    %th Time
-    %th
-    %th
-    %th
-
-  - @events.each do |event|
-    %tr
-      %td= event.title
-      %td= event.description
-      %td= event.venue
-      %td= event.address
-      %td= event.city
-      %td= event.state
-      %td= event.zip
-      %td= event.url
-      %td= event.time
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Event', new_event_path
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li.active Upcoming Events
+%h3 Upcoming Events
+%br/
+- @events.each do |event|
+  %h4= link_to event.title, event
+  %p
+    %strong= event.time.to_formatted_s(:my_format)
+  %p= event.venue
+  %p= event.description.truncate(250).html_safe
+  %p= link_to 'More Info', event, class: 'btn btn-sm btn-primary pull-right'
+  %br/
+  %hr/
+= paginate @events
