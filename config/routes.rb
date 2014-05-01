@@ -7,7 +7,7 @@ Ashleyvbagley::Application.routes.draw do
 
   get '/gallery(/:page)', to: 'photos#gallery', as: :gallery
 
-  resources :articles
+  resources :articles, path: "blog"
   resources :videos
   resources :photos
   resources :pages
