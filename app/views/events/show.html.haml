@@ -1,33 +1,39 @@
-%p#notice= notice
-
+%ol.breadcrumb
+  %li= link_to 'Home', root_path
+  %li= link_to 'Events', events_path
+  %li.active= @event.title
+%h3= @event.title
 %p
-  %b Title:
-  = @event.title
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Venue:
-  = @event.venue
-%p
-  %b Address:
-  = @event.address
-%p
-  %b City:
-  = @event.city
-%p
-  %b State:
-  = @event.state
-%p
-  %b Zip:
-  = @event.zip
-%p
-  %b Url:
-  = @event.url
-%p
-  %b Time:
-  = @event.time
-
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+  = @event.time.to_formatted_s(:my_format)
+  - if @event.venue
+    at #{@event.venue}
+%p= @event.description.html_safe
+%table.table.table-bordered
+  %tr
+    %td
+      %strong What:
+    %td= @event.title
+  %tr
+    %td{width: "8%"}
+      %strong When:
+    %td{width: "92%"}= @event.time.to_formatted_s(:my_format)
+  - if !@event.venue.empty?
+    %tr
+      %td
+        %strong Where:
+      %td= @event.venue
+  - if !@event.address.empty?
+    %tr
+      %td
+      %td
+        = @event.address
+        = @event.city
+        , #{@event.state}#{@event.zip}
+  - if @event.url
+    %tr
+      %td
+        %strong Website:
+      %td= link_to @event.url, @event.url, target: '_blank'
+%p.text-right= link_to 'Back to all of Ashley\'s events', events_path, class: ''
+%hr/
+= render 'layouts/structure/disqus-thread'
