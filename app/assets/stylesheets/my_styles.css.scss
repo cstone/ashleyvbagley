@@ -116,6 +116,19 @@ a {
 }
 
 
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  color: $white;
+  text-decoration: none;
+  outline: 0;
+  background-color: $main;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+  text-decoration: none;
+  color: $white;
+  background-color: $main-dark;
+}
+
 .text-right {
   text-align:right;
 }
