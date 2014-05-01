@@ -35,12 +35,11 @@ ActiveAdmin.register Page do
       row :content do
         simple_format page.content
       end
-      if page.page_image.url
+      if page.page_image
         row :page_image do
           image_tag(page.page_image.url)
         end
       end
-
       row :created_at
       row :updated_at
     end
