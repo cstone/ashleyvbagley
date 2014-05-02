@@ -32,7 +32,6 @@
           More
           %b.caret
         %ul.dropdown-menu
-          %li{class: cpa(photos_path)}
-            = link_to 'Photos', photos_path
-          %li{class: cpa(videos_path)}
-            = link_to 'Videos', videos_path
+          %li{class: cpa(page_path('social-media'))}
+            = link_to 'Social Media', page_path('social-media')
+
