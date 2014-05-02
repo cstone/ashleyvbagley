@@ -40,7 +40,9 @@ gem 'activeadmin'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'contact_us', '~> 0.5.0'
-gem 'just-datetime-picker'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
