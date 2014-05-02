@@ -1,10 +1,9 @@
 ActiveAdmin.register Article do
 
-
   form do |f|
     f.inputs "Articles", :multipart => true do
       f.input :title
-      f.input :body
+      f.input :body, as: :wysihtml5
       f.input :allow_comments
       f.input :article_image, :as => :file, :hint => f.object.article_image.present? \
     ? f.template.image_tag(f.object.article_image.url(:thumb))
