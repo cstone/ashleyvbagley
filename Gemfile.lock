@@ -1,3 +1,20 @@
+GIT
+  remote: git://github.com/stefanoverna/activeadmin-dragonfly.git
+  revision: 89a47f9124b1c4ee4ae79f6c32aa999d2566c5d1
+  specs:
+    activeadmin-dragonfly (0.0.2)
+      activeadmin
+      dragonfly (= 0.9.15)
+      rack-cache
+
+GIT
+  remote: git://github.com/stefanoverna/activeadmin-wysihtml5.git
+  revision: c499bc7ee00b8c31667a7da4a210d531463c530e
+  specs:
+    activeadmin-wysihtml5 (1.0.0)
+      activeadmin
+      activeadmin-dragonfly
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -68,6 +85,9 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     excon (0.33.0)
     execjs (2.0.2)
@@ -119,9 +139,6 @@ GEM
     jquery-ui-rails (4.1.2)
       railties (>= 3.1.0)
     json (1.8.1)
-    just-datetime-picker (0.0.6)
-      activeadmin (>= 0.4.4)
-      formtastic (>= 2.0.0)
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -208,6 +225,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activeadmin-dragonfly!
+  activeadmin-wysihtml5!
   carrierwave
   coffee-rails (~> 3.2.1)
   contact_us (~> 0.5.0)
@@ -219,7 +238,6 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-ui-rails
-  just-datetime-picker
   kaminari
   pg
   rails (= 3.2.13)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140430045856) do
+ActiveRecord::Schema.define(:version => 20140502153721) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(:version => 20140430045856) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "assets", :force => true do |t|
+    t.string   "storage_uid"
+    t.string   "storage_name"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "storage_width"
+    t.integer  "storage_height"
+    t.float    "storage_aspect_ratio"
+    t.integer  "storage_depth"
+    t.string   "storage_format"
+    t.string   "storage_mime_type"
+    t.string   "storage_size"
+  end
+
   create_table "dynamic_contents", :force => true do |t|
     t.string   "title"
     t.string   "key"
@@ -94,6 +108,19 @@ ActiveRecord::Schema.define(:version => 20140430045856) do
     t.boolean  "allow_comments"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "rich_rich_files", :force => true do |t|
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        :default => "file"
   end
 
   create_table "videos", :force => true do |t|
