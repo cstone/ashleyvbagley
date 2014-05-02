@@ -7,6 +7,9 @@ gem 'rails', '3.2.13'
 
 group :development do
   gem 'sqlite3'
+  gem 'haml-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -29,7 +32,6 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
-gem 'haml-rails', :group => :development
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'carrierwave'

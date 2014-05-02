@@ -61,6 +61,11 @@ GEM
       activesupport (>= 3.0.0)
     arel (3.0.3)
     bcrypt (3.1.7)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bourbon (4.0.1)
       sass (~> 3.3)
       thor
@@ -70,6 +75,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -79,6 +85,7 @@ GEM
     coffee-script-source (1.7.0)
     contact_us (0.5.0)
       rails (>= 3.0.0)
+    debug_inspector (0.0.2)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -230,6 +237,8 @@ DEPENDENCIES
   activeadmin
   activeadmin-dragonfly!
   activeadmin-wysihtml5!
+  better_errors
+  binding_of_caller
   carrierwave
   coffee-rails (~> 3.2.1)
   contact_us (~> 0.5.0)
