@@ -1,5 +1,11 @@
 Ashleyvbagley::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   root :to => 'home#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

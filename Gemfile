@@ -38,14 +38,10 @@ gem 'carrierwave'
 gem 'fog'
 gem 'rmagick', '~>2.13.2', :require => 'RMagick'
 gem 'figaro'
-gem 'activeadmin'
-gem 'jquery-ui-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'kaminari'
-gem 'contact_us', '~> 0.5.0'
-gem 'just-datetime-picker'
-gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
-gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
-
+gem 'ckeditor'
+gem 'mini_magick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
