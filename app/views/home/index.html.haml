@@ -1,2 +1,4 @@
 %h3= @home_title
+- if @home_image
+  = image_tag @home_image, class: 'img-float-right img-responsive'
 = @home_content.html_safe

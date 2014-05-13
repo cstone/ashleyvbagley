@@ -7,6 +7,8 @@
       .row
         = render partial: "layouts/structure/header"
       = render partial: "layouts/structure/navigation"
+      - if current_page?(root_path)
+        = render partial: "layouts/structure/banner"
       .row
         .col-md-9
           = yield
