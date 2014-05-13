@@ -6,4 +6,6 @@
     = time_ago_in_words photo.created_at
     ago
   %p= photo.description.html_safe
+  - if photo.allow_comments
+    = render 'layouts/structure/disqus-thread'
 = paginate @photos
