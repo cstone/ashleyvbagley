@@ -2,12 +2,6 @@ Ashleyvbagley::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   root :to => 'home#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -18,7 +12,7 @@ Ashleyvbagley::Application.routes.draw do
   resources :articles, path: "blog"
   resources :videos
   resources :photos
-  resources :pages
+  resources :pages, except: [:show]
   resources :events
   get 'blog', to: 'articles#index', as: :blog
   get ':id', to: 'pages#show', as: :page
