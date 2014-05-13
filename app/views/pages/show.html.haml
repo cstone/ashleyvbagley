@@ -1,6 +1,7 @@
-%ol.breadcrumb
-  %li= link_to 'Home', root_path
-  %li.active= @page.title
+- unless(current_page?(root_path))
+  %ol.breadcrumb
+    %li= link_to 'Home', root_path
+    %li.active= @page.title
 %h4= @page.title
 - if @page.page_image.url
   = image_tag @page.page_image.url, class: 'img-float-right img-responsive'
