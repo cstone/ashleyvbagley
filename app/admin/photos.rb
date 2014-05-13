@@ -28,7 +28,7 @@ ActiveAdmin.register Photo do
       row :id
       row :title
       row :description do
-        simple_format photo.description
+        photo.description.html_safe
       end
       if photo.photo_image.url
         row :photo_image do

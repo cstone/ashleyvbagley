@@ -23,7 +23,7 @@ ActiveAdmin.register Video do
       row :id
       row :title
       row :description do
-        simple_format video.description
+        video.description.html_safe
       end
       row :source
       row :allow_comments

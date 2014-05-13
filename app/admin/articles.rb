@@ -33,7 +33,7 @@ ActiveAdmin.register Article do
       row :id
       row :title
       row :body do
-        simple_format article.body
+        article.body.html_safe
       end
       row :allow_comments
       if article.article_image.url

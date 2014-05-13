@@ -41,7 +41,7 @@ ActiveAdmin.register Page do
       row :title
       row :permalink
       row :content do
-        simple_format page.content
+        page.content.html_safe
       end
       row :page_image do
         if page.page_image.url
