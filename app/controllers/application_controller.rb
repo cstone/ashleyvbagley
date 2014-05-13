@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
     @instagram_url = DynamicContent.get_value(:instagram_url)
     @youtube_url = DynamicContent.get_value(:youtube_url)
     @site_title = DynamicContent.get_value(:site_title)
-    @home_title = DynamicContent.get_value(:home_title)
-    @home_content = DynamicContent.get_value(:home_content)
+    @home_title = Page.get_title(:home)
+    @home_content = Page.get_content(:home).html_safe
     @banner_name = DynamicContent.get_value(:banner_name)
     @banner_content = DynamicContent.get_value(:banner_content)
     @contact_name = DynamicContent.get_value(:contact_name)
