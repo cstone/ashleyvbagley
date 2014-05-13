@@ -24,7 +24,7 @@ ActiveAdmin.register Page do
     f.inputs do
       f.input :title
       f.input :permalink
-      f.input :content
+      f.input :content, :as => :ckeditor, :input_html => { :ckeditor => { :height => 400 } }
       f.input :page_image, :as => :file, :hint => f.object.page_image.present? \
     ? f.template.image_tag(f.object.page_image.url(:thumb))
       : f.template.content_tag(:span, "no photo yet")
