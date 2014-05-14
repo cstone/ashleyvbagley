@@ -1,4 +1,4 @@
-- unless(current_page?(root_path))
+- if !current_page?(root_path)
   %ol.breadcrumb
     %li= link_to 'Home', root_path
     %li.active= @page.title
