@@ -1,4 +1,4 @@
-ActiveAdmin.register Article do
+ActiveAdmin.register Article, :as => "Blog" do
 
   form do |f|
     f.inputs "Articles", :multipart => true do
