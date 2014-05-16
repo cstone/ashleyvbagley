@@ -5,5 +5,5 @@
 - if !current_page?(root_path)
   %h4= @page.title
 - if @page.page_image.url
-  = image_tag @page.page_image.url, class: 'img-float-right img-responsive'
+  = image_tag @page.page_image.url, class: 'img-responsive img-float-right'
 = @page.content.html_safe
