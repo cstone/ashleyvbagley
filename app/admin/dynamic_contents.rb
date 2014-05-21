@@ -5,7 +5,7 @@ ActiveAdmin.register DynamicContent do
     column :title
     column :key
     column :value
-    default_actions
+    actions
   end
 
   form do |f|

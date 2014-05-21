@@ -6,7 +6,7 @@ ActiveAdmin.register Event do
     column :time do |model|
       model.time.to_formatted_s(:my_format)
     end
-    default_actions
+    actions
   end
 
 

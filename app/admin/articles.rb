@@ -20,7 +20,7 @@ ActiveAdmin.register Article, :as => "Blog" do
     selectable_column
     column :title
     column :allow_comments
-    default_actions
+    actions
   end
 
   filter :title

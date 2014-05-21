@@ -17,7 +17,7 @@ ActiveAdmin.register Page do
     column :content do |content|
       content.content.truncate(75).html_safe
     end
-    default_actions
+    actions
   end
 
   form do |f|
